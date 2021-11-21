@@ -8,3 +8,7 @@ spring:
           uri: 'http://localhost:18043'
           predicates:
             - Path=/water-monitor-service/**
+        - id: user-service
+          uri: 'http://localhost:18044'
+          predicates:
+            - Path=/user-service/**
