@@ -1,4 +1,4 @@
-package postnl.gateway;
+package watermonitor.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
