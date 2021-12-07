@@ -8,7 +8,7 @@
 		<version>2.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>postnl</groupId>
+	<groupId>water-monitor</groupId>
 	<artifactId>gateway</artifactId>
 	<version>latest</version>
 	<name>gateway</name>
@@ -16,10 +16,8 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<jib-maven-plugin-version>2.8.0</jib-maven-plugin-version>
+		<jib-maven-plugin-version>3.1.4</jib-maven-plugin-version>
 		<spring-cloud.version>2020.0.2</spring-cloud.version>
-  		<sonar.projectKey>stijn3ssens1_parcel-manage-service</sonar.projectKey>
-  		<sonar.organization>stijn3ssens1</sonar.organization>
 	</properties>
 
 	<dependencies>
@@ -82,6 +80,14 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
@@ -92,6 +98,17 @@
 				<configuration>
 					<to>
 						<image>stijndriessensfontys/${project.groupId}-${project.artifactId}:${project.version}</image>
+					</to>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>${jib-maven-plugin-version}</version>
+				<configuration>
+					<to>
+						<image>gaitwatermonitor/watermonitor:gateway${project.version}</image>
 					</to>
 				</configuration>
 			</plugin>
