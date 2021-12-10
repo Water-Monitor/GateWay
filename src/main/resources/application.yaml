@@ -19,12 +19,15 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "*"
+            allowedOrigins: "http://localhost:4200"
             allowedHeaders:
               - Content-Type
+              - Authorization
             allowedMethods:
               - GET
               - POST
+              - DELETE
+              - PUT
               - OPTIONS
       routes:
         - id: water-monitor-service
