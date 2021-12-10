@@ -19,12 +19,13 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "http://localhost:4200"
+            allowedOrigins: "*"
             allowedHeaders:
-              - content-type
+              - Content-Type
             allowedMethods:
               - GET
               - POST
+              - OPTIONS
       routes:
         - id: water-monitor-service
           uri: 'http://localhost:8043'
