@@ -21,10 +21,14 @@ spring:
           '[/**]':
             allowedOrigins: "http://localhost:4200"
             allowedHeaders:
-              - content-type
+              - Content-Type
+              - Authorization
             allowedMethods:
               - GET
               - POST
+              - DELETE
+              - PUT
+              - OPTIONS
       routes:
         - id: water-monitor-service
           uri: 'http://localhost:8043'
